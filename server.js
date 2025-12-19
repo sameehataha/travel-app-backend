@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors') 
 const mongoose = require('mongoose')
 const connectDB = require("./config/dbconfig")
 const app = express()
@@ -10,6 +11,12 @@ const hotelDataAddedToDBRouter = require("./routes/dataimport-router")
 const categoryDataAddedToDBRouter = require("./routes/categoryimport-route")
 const singleHotelRouter = require("./routes/singlehotel-route")
 const PORT = 3500
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
+}))
 app.use(express.json())
 connectDB()
 app.get("/",(req,res) => {
