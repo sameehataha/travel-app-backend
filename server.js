@@ -12,7 +12,9 @@ const categoryDataAddedToDBRouter = require("./routes/categoryimport-route")
 const singleHotelRouter = require("./routes/singlehotel-route")
 const PORT = 3500
 app.use(cors({
-    origin: ["https://travel-app-frontend-sigma.vercel.app/","http://localhost:3001"],
+    origin: ["https://travel-app-frontend-sigma.vercel.app","http://localhost:3001",
+     "http://localhost:3500", 
+    ],
     // methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
     // allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
