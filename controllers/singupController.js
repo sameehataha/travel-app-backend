@@ -11,8 +11,12 @@ const singupHandler = async(req,res) => {
             const newUser = new User(userObject)
             const savedUser = await newUser.save()
             res.status(201).json(savedUser)
-          }catch(err){
-            res.status(500).json({ message: "error creating new user" })
-          }
+          }catch(err) {
+        console.error("Signup error:", err); 
+        res.status(500).json({ 
+            message: "error creating new user",
+            error: err.message 
+        })
+    }
         }
 module.exports = singupHandler
