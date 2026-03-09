@@ -20,10 +20,7 @@ const loginHandler = async(req, res) => {
         }
         
         const { password, ...rest } = user._doc
-        const accessToken = jwt.sign(
-            { username: user.username, userId: user._id }, 
-            process.env.ACCESS_TOKEN
-        )
+        const accessToken = jwt.sign({ username: user.username, userId: user._id }, process.env.ACCESS_TOKEN, { expiresIn: "7d" })
         
         res.json({ ...rest, accessToken })
         

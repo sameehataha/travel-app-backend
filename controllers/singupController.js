@@ -1,5 +1,7 @@
 const CryptoJS = require('crypto-js')
 const User = require("../model/user-model")
+const existing = await User.findOne({ $or: [{ email: req.body.email }, { number: req.body.number }] })
+if (existing) return res.status(409).json({ message: "User already exists" })
 const singupHandler = async(req,res) => {    
           try{
             const userObject = {

@@ -15,8 +15,8 @@ app.use(cors({
     origin: ["https://travel-app-frontend-sigma.vercel.app","http://localhost:3001",
      "http://localhost:3500", 
     ],
-    // methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
-    // allowedHeaders: ['Content-Type', 'Authorization'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
 }))
 app.use(express.json())
@@ -29,7 +29,7 @@ app.use("/api/hoteldata",hotelDataAddedToDBRouter)
 app.use("/api/categorydata",categoryDataAddedToDBRouter)
 app.use("/api/hotels", hotelRouter)
 app.use("/api/category",categoryRouter)
-app.use("/api/hotels",singleHotelRouter)
+app.use("/api/hotels", singleHotelRouter)
 app.use("/api/auth",authRouter)
 app.use("/api/wishlist", wishlistRouter)
 
