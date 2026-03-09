@@ -1,4 +1,6 @@
-const jwt = require('jsonwebtoken')  // add this import
+const CryptoJS = require('crypto-js')   // FIX: was missing
+const jwt = require('jsonwebtoken')
+const User = require("../model/user-model")  // FIX: was missing
 
 const singupHandler = async (req, res) => {
     try {
@@ -17,16 +19,16 @@ const singupHandler = async (req, res) => {
         const savedUser = await newUser.save()
         const { password, ...rest } = savedUser._doc
 
-        // ✅ Generate token just like loginController does
         const accessToken = jwt.sign(
             { username: savedUser.username, userId: savedUser._id },
             process.env.ACCESS_TOKEN,
             { expiresIn: "7d" }
         )
 
-        res.status(201).json({ ...rest, accessToken })  // ✅ include token
+        res.status(201).json({ ...rest, accessToken })
 
     } catch (err) {
+        console.error("Signup error:", err)
         res.status(500).json({ message: "error creating new user", error: err.message })
     }
 }
