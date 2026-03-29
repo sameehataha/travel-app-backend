@@ -149,8 +149,76 @@ git clone https://github.com/sameehataha/travel-app-backend.git
 cd travelappbackend
 ```
 
-2. **Install dependencies**
+2. **Install dependencies** <br>
 npm install
 
-3. **Create .env file in the root directory:**
+3. **Create .env file in the root directory:** <br>
+DATABASE_URL=your_mongodb_connection_string
+ACCESS_TOKEN=your_jwt_secret_key
+PASSWORD_SECRET_KEY=your_password_encryption_key
+PORT=3500
 
+4. **Run the application** <br>
+Development mode with auto-reload:
+npm run dev <br>
+**Production Mode**
+npm start
+
+5. **Import initial data (Optional)**:
+ # Import hotels
+POST https://localhost:3500/api/hoteldata
+# Import categories
+POST https://localhost:3500/api/categorydata
+
+# Database Schemas
+
+## User Model
+```
+{
+  username: String (required),
+  number: Number (required, unique),
+  email: String (required, unique),
+  password: String (required, encrypted),
+  timestamps: true
+}
+```
+
+# Hotel Model
+ ```
+{
+  name: String (required),
+  category: String (required),
+  image: String (required),
+  imageArr: Array (required),
+  address: String (required),
+  city: String (required),
+  state: String (required),
+  country: String (required),
+  price: String (required),
+  rating: String (required),
+  numberOfBathrooms: String (required),
+  numberOfBeds: String (required),
+  numberOfguest: String (required),
+  numberOfBedrooms: String (required),
+  numberOfStudies: String (required),
+  hostName: String (required),
+  hostJoinedOn: String (required),
+  ameneties: Array (required),
+  healthAndSafety: Array (required),
+  houseRules: Array (required),
+  propertyType: String (required),
+  isCancelable: Boolean (required)
+}
+```
+# Category Model
+```
+{
+  category: String (required)
+}
+```
+# Wishlist Model
+```
+{
+  hotelId: String (required)
+}
+```
