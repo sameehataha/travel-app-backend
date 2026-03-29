@@ -222,3 +222,97 @@ POST https://localhost:3500/api/categorydata
   hotelId: String (required)
 }
 ```
+# Environment Variables
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `DATABASE_URL` | MongoDB connection string | ✅ |
+| `ACCESS_TOKEN` | JWT secret key for authentication | ✅ |
+| `PASSWORD_SECRET_KEY` | Encryption key for user passwords | ✅ |
+| `PORT` | Server port (default: 3500) | ❌ |
+
+# CORS Configuration
+The API is configured to accept requests from:
+<br>
+- https://travel-app-frontend-sigma.vercel.app
+- http://localhost:3001
+- http://localhost:3500
+<br>
+### Allowed methods: GET, POST, PUT, DELETE, PATCH
+
+#  Example API Responses
+
+## Successful Login Response
+```
+{
+  "_id": "user_id",
+  "username": "john_doe",
+  "number": 1234567890,
+  "email": "john@example.com",
+  "accessToken": "jwt_token_here"
+}
+```
+## Hotels Response
+```
+[
+  {
+    "_id": "hotel_id",
+    "name": "Whispering Pines Cottages",
+    "category": "National Parks",
+    "price": 2999,
+    "rating": 4.5,
+    "city": "Banjar Valley",
+    "state": "Himachal Pradesh"
+  }
+]
+```
+
+# Contributing 
+
+1. Fork the repository
+2. Create your feature branch (git checkout -b feature/amazing-feature)
+3. Commit your changes (git commit -m 'Add some amazing feature')
+4. Push to the branch (git push origin feature/amazing-feature)
+5. Open a Pull Request
+
+# License
+This project is licensed under the ISC License.
+
+# Author
+
+**Sameeha Taha**
+
+# Acknowledgments
+- MongoDB Atlas for database hosting
+
+- Render for backend deployment
+
+- Vercel for frontend hosting
+
+- Unsplash for hotel images
+
+# Support
+
+For issues, questions, or contributions, please open an issue in the GitHub repository.
+
+#  Roadmap
+-Add payment gateway integration
+-Implement booking system
+-Add user reviews and ratings
+-Implement search and advanced filtering
+-Add email notifications
+-Implement password reset functionality
+-Add admin dashboard
+-Implement real-time availability checking
+
+# ⭐ Don't forget to star the repository if you found it helpful!
+
+This README provides:
+- Professional structure with badges
+- Clear feature listing
+- Complete API documentation
+- Installation instructions
+- Database schemas
+- Environment variables
+- Example responses
+- Contributing guidelines
+- Roadmap for future development
