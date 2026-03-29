@@ -294,14 +294,14 @@ This project is licensed under the ISC License.
 For issues, questions, or contributions, please open an issue in the GitHub repository.
 
 #  Roadmap
--Add payment gateway integration
--Implement booking system
--Add user reviews and ratings
--Implement search and advanced filtering
--Add email notifications
--Implement password reset functionality
--Add admin dashboard
--Implement real-time availability checking
+- Add payment gateway integration
+- Implement booking system
+- Add user reviews and ratings
+- Implement search and advanced filtering
+- Add email notifications
+- Implement password reset functionality
+- Add admin dashboard
+- Implement real-time availability checking
 
 # ⭐ Don't forget to star the repository if you found it helpful!
 
