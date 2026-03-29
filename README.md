@@ -92,3 +92,65 @@ travelappbackend/<br>
 ├── .env # Environment variables <br>
 ├── package.json # Dependencies & scripts <br>
 └── server.js # Application entry point <br>
+
+
+
+##  API Endpoints
+
+### Authentication Routes (`/api/auth`)
+
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| `POST` | `/register` | Register new user | ❌ |
+| `POST` | `/login` | Login user | ❌ |
+
+### Hotel Routes (`/api/hotels`)
+
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| `GET` | `/` | Get all hotels (supports `?category=value` filter) | ❌ |
+| `GET` | `/:id` | Get single hotel by ID | ❌ |
+
+### Category Routes (`/api/category`)
+
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| `GET` | `/` | Get all categories | ❌ |
+
+### Wishlist Routes (`/api/wishlist`)
+
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| `POST` | `/` | Add hotel to wishlist | ✅ |
+| `GET` | `/` | Get user's wishlist | ✅ |
+| `DELETE` | `/:id` | Remove hotel from wishlist | ✅ |
+
+### Data Import Routes (Admin/Development)
+
+| Method | Endpoint | Description | Auth Required |
+|--------|----------|-------------|---------------|
+| `POST` | `/api/hoteldata` | Bulk import hotels to database | ❌ |
+| `POST` | `/api/categorydata` | Bulk import categories to database | ❌ |
+
+---
+
+##  Installation & Setup
+
+### Prerequisites
+- Node.js (v18 or higher)
+- MongoDB Atlas account or local MongoDB instance
+- npm or yarn package manager
+
+### Steps
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/sameehataha/travel-app-backend.git
+cd travelappbackend
+```
+
+2. **Install dependencies**
+npm install
+
+3. **Create .env file in the root directory:**
+
