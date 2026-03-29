@@ -16,7 +16,7 @@ The **Travel App Backend** is a robust RESTful API built with Node.js, Express, 
 | **Backend API** | [https://travel-app-backend-jrcu.onrender.com](https://travel-app-backend-jrcu.onrender.com) |
 | **Frontend Application** | [https://travel-app-frontend-sigma.vercel.app](https://travel-app-frontend-sigma.vercel.app) |
 
-
+![Booking.com  (Airbnb Clone) - Homepage](./preview.png.png)
 
 ##  Features
 
