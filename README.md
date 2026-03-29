@@ -236,7 +236,6 @@ The API is configured to accept requests from:
 - https://travel-app-frontend-sigma.vercel.app
 - http://localhost:3001
 - http://localhost:3500
-<br>
 ### Allowed methods: GET, POST, PUT, DELETE, PATCH
 
 #  Example API Responses
